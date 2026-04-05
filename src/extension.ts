@@ -49,7 +49,7 @@ async function uploadImage(
     }
 
     const data = (await res.json()) as { url: string };
-    return data.url;
+    return data.url.replace("cdn.hackclub.com", "user-cdn.hackclub-assets.com");
 }
 
 function getImageFile(
@@ -118,8 +118,11 @@ class PasteCdnProvider implements vscode.DocumentPasteEditProvider {
         const data = await file.data();
         if (!data || token.isCancellationRequested) return undefined;
 
-        const filename =
-            file.name || `paste-${Date.now()}.${mime.split("/")[1] ?? "png"}`;
+        const ext = mime.split("/")[1] ?? "png";
+        const isGenericName = !file.name || /^image\.\w+$/.test(file.name);
+        const filename = isGenericName
+            ? `paste-${Date.now()}.${ext}`
+            : file.name;
 
         try {
             const url = await uploadImage(data, filename, mime, apiKey);
