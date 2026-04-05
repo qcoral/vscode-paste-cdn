@@ -1,2 +1,5 @@
-# vscode-paste-cdn
-whenever i paste images i would prefer they get auto uploaded into cdn. here we go
+# Image paste CDN
+
+Get your markdown images auto pasted into [Hack Club CDN](https://cdn.hackclub.com/)
+
+Get an API key from https://cdn.hackclub.com/api_keys. Make sure to set `pasteCdn.apiKey` with your API key!

@@ -1,0 +1,60 @@
+{
+    "name": "paste-cdn",
+    "displayName": "Image paste CDN (Hack Club)",
+    "description": "Automatically uploads pasted images in Markdown and MDX files to the [Hack Club CDN](https://cdn.hackclub.com/) and inserts the image URL.",
+    "version": "0.1.0",
+    "publisher": "dari",
+    "license": "MIT",
+    "icon": "assets/icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/qcoral/vscode-paste-cdn"
+    },
+    "homepage": "https://github.com/qcoral/vscode-paste-cdn#readme",
+    "bugs": {
+        "url": "https://github.com/qcoral/vscode-paste-cdn/issues"
+    },
+    "keywords": [
+        "markdown",
+        "mdx",
+        "image",
+        "paste",
+        "cdn",
+        "hackclub",
+        "upload"
+    ],
+    "engines": {
+        "vscode": "^1.82.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "onLanguage:markdown",
+        "onLanguage:mdx"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "configuration": {
+            "title": "Paste CDN",
+            "properties": {
+                "pasteCdn.apiKey": {
+                    "type": "string",
+                    "default": "",
+                    "description": "Hack Club CDN API key. Get one from https://cdn.hackclub.com/api_keys"
+                }
+            }
+        }
+    },
+    "scripts": {
+        "build": "esbuild src/extension.ts --bundle --outfile=dist/extension.js --external:vscode --format=cjs --platform=node",
+        "watch": "npm run build -- --watch",
+        "package": "vsce package"
+    },
+    "devDependencies": {
+        "@types/node": "^25.5.2",
+        "@types/vscode": "^1.82.0",
+        "esbuild": "^0.20.0",
+        "typescript": "^5.4.0"
+    }
+}
