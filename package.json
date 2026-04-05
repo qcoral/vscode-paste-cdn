@@ -2,7 +2,7 @@
     "name": "paste-cdn",
     "displayName": "Image paste CDN (Hack Club)",
     "description": "Automatically uploads pasted images in Markdown and MDX files to the Hack Club CDN and inserts the image URL. Up to 50GB free for teenagers",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "publisher": "dari",
     "license": "MIT",
     "icon": "assets/icon.png",

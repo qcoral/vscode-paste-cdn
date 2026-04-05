@@ -49,7 +49,7 @@ async function uploadImage(
     }
 
     const data = (await res.json()) as { url: string };
-    return data.url.replace("cdn.hackclub.com", "user-cdn.hackclub-assets.com");
+    return data.url;
 }
 
 function getImageFile(
