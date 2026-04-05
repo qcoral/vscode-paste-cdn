@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="/assets/icon.png" width="128">
+</p>
+
 # Image paste CDN
 
 Get your markdown images auto pasted into [Hack Club CDN](https://cdn.hackclub.com/)
